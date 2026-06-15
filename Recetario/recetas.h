@@ -6,8 +6,8 @@ using namespace std;
 
 class recetas{
 public:
-    recetas();
-    string getNombre() const;
+    recetas();//constructor vacio pues las recetas se crean en "cascada"
+    string getNombre() const;//prototipos de metodos
     void setNombre(string nuevoN);
     int getPersonas() const;
     void setPersonas(int nuevoPe);
@@ -18,7 +18,7 @@ public:
     vector<string> getPasos() const;
     void setPasos(vector<string> nuevoPa);
 private:
-    string nombre;
+    string nombre;//variables de la receta
     int personas;
     int cuanto;
     vector<string> lista;

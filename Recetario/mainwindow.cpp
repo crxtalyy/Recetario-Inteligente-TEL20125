@@ -116,7 +116,7 @@ void MainWindow::cargarRecetas(){
     lista = leerRecetas(name);
     deque<recetas>::iterator i;
     for(i = lista.begin(); i != lista.end(); i++){
-        ui->listaRecetas->addItem(QString::fromStdString(i->nombre));
+        ui->listaRecetas->addItem(QString::fromStdString(i->getNombre()));
     }
 }
 

@@ -4,6 +4,7 @@
 #include <vector>
 #include <deque>
 #include "logica.h"
+#include "recetas.h"
 using namespace std;
 
 int validar(string user, string pass){
@@ -75,6 +76,8 @@ deque<recetas> leerRecetas(string usuario){
     ifstream archivo("recetas_usuarios/recetas_" + usuario + ".txt");
     string line;//lectora de lineas
     string ignorar;//descarta lineas
+    int per = 0;//temporal
+    int cant = 0;//temporal
     deque<recetas> all;//el retorno
     if(archivo.is_open()){
         while(getline(archivo, line)){//while que lee el archivo
@@ -82,15 +85,18 @@ deque<recetas> leerRecetas(string usuario){
                 recetas nueva;//creamos una variable de nuestro struct
                 vector<string> ing;//temporal
                 vector<string> pre;//temporal
-                getline(archivo, nueva.nombre);//guardamos nombre
-                archivo >> nueva.personas >> nueva.cuanto;//guardamos los numeros
+                getline(archivo, line);//guardamos nombre
+                nueva.setNombre(line);
+                archivo >> per >> cant;//guardamos los numeros en temporal
+                nueva.setPersonas(per);
+                nueva.setCuanto(cant);
                 archivo.ignore();//borramos el salto de linea
                 getline(archivo, ignorar);//descartamos linea "Ingredientes:"
-                for(int i = 0; i<nueva.cuanto; i++){//recorremos la lista de ingredientes
+                for(int i = 0; i<nueva.getCuanto(); i++){//recorremos la lista de ingredientes
                     getline(archivo,line);
                     ing.push_back(line);//agregamos a la temporal
                 }
-                nueva.lista = ing;//guardamos la lista
+                nueva.setLista(ing);//guardamos la lista
                 getline(archivo, ignorar);//descartamos linea "Preparacion: "
                 while(getline(archivo,line)){//recorremos preparacion
                     if(line == "FIN"){//si encontramos el fin terminamos el bucle
@@ -98,7 +104,7 @@ deque<recetas> leerRecetas(string usuario){
                     }
                     pre.push_back(line);//añadimos en la temporal
                 }
-                nueva.pasos = pre;//guardamos paso a paso
+                nueva.setPasos(pre);//guardamos paso a paso
                 all.push_back(nueva);//agregamos recetas al vector
             }
         }

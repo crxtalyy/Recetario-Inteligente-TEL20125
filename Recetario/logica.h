@@ -3,15 +3,8 @@
 #include <string>
 #include <vector>
 #include <deque>
+#include "recetas.h"
 using namespace std;
-
-struct recetas{
-    string nombre;
-    int personas;
-    int cuanto;
-    vector<string> lista;
-    vector<string> pasos;
-};
 
 int validar(string user, string pass);
 void crearBase(string nombre, int p, int i, string usuario);

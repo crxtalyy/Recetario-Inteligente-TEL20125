@@ -43,6 +43,7 @@ void MainWindow::on_BotonEnter_clicked(){
         }
         QMessageBox::information(this,"Ingreso","Nuevo Usuario Registrado.\nBienvenid@!!!");
         ui->welcome->setText("Bienvenido a tu recetario " + QString::fromStdString(name));
+        cargarRecetas();
         ui->stackedWidget->setCurrentIndex(1);
         ui->UserBox->clear();
         ui->PassBox->clear();

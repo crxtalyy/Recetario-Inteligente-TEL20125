@@ -10,12 +10,17 @@ using namespace std;
 int validar(string user, string pass){
     ifstream leer("usuarios.txt");//para leer el archivo
     string p, q;
+    const char key = 4;
     bool existe = false;//asumimos que usuario no existe
     if(leer.is_open()){
         while(leer >> p >> q){ //extraigo archivo por espacio y \n
             if(p == user){//vemos si existe el usuario
                 existe = true;//corroboramos que existe
-                if(q == pass){//vemos si coincide la contraseña
+                string descifrado = "";
+                for(int i = 0; i<q.size(); i++){
+                    descifrado += (q[i]^key);
+                }
+                if(descifrado == pass){//vemos si coincide la contraseña
                     leer.close();
                     return 1; //1: USUARIO ENCONTRADO
                 }
@@ -30,8 +35,12 @@ int validar(string user, string pass){
     if(!existe){
     //llave pues si encontramos usuario se salta el if y si nunca encontramos usuario entra al if
         ofstream escribir("usuarios.txt", std::ios::app);
+        string cifrado = "";
+        for(int i = 0; i<pass.size(); i++){
+            cifrado += (pass[i]^key);
+        }
         if(escribir.is_open()){
-            escribir << user << " " << pass << endl;//agregamos al archivo los nuevos usuarios
+            escribir << user << " " << cifrado << endl;//agregamos al archivo los nuevos usuarios
             escribir.close();
             return 3;//NUEVO USUARIO
         }

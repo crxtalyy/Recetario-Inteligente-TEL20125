@@ -2,9 +2,9 @@
 #include <vector>
 #include "recetas.h"
 
-recetas::recetas(): nombre(""), personas(0), cuanto(0){ }
+recetas::recetas(): nombre(""), personas(0), cuanto(0){ }//programacion de constructor
 
-string recetas::getNombre() const{
+string recetas::getNombre() const{//programacion de los metodos
     return nombre;
 }
 

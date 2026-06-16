@@ -4,6 +4,7 @@
 #include <QMessageBox>
 #include <fstream>
 #include <string>
+#include "recetas.h"
 using namespace std;
 
 MainWindow::MainWindow(QWidget *parent): QMainWindow(parent), ui(new Ui::MainWindow){
@@ -107,18 +108,42 @@ void MainWindow::on_home_clicked(){
 void MainWindow::on_adios_clicked(){
     auto respuesta = QMessageBox::question(this, "Salir", "¿Estás seguro de abandonar tu Recetario?", QMessageBox::Yes | QMessageBox::No);
     if(respuesta == QMessageBox::Yes){
+        name = "";
         ui->stackedWidget->setCurrentIndex(0);
     }
 }
 
 void MainWindow::cargarRecetas(){
     ui->listaRecetas->clear();
-    deque<recetas> lista;
-    lista = leerRecetas(name);
+    listaRecetas = leerRecetas(name);
     deque<recetas>::iterator i;
-    for(i = lista.begin(); i != lista.end(); i++){
+    for(i = listaRecetas.begin(); i != listaRecetas.end(); i++){
         ui->listaRecetas->addItem(QString::fromStdString(i->getNombre()));
     }
 }
 
-
+void MainWindow::on_listaRecetas_currentRowChanged(int currentRow){
+    if (currentRow < 0 || currentRow >= listaRecetas.size()){
+        return;
+    }
+    recetas una = listaRecetas[currentRow];
+    ui->stackedWidget->setCurrentIndex(5);
+    ui->title->setText(QString::fromStdString(una.getNombre()));
+    string parrafo = "";
+    vector<string> linea = una.getLista();
+    for(int i = 0; i < linea.size(); i++){
+        parrafo += to_string(i+1);
+        parrafo += ". ";
+        parrafo += linea[i];
+        parrafo += "\n";
+    }
+    ui->ingre->setText(QString::fromStdString(parrafo));
+    parrafo = "";
+    vector<string> line = una.getPasos();
+    for(int i = 0; i < line.size(); i++){
+        parrafo += line[i];
+        parrafo += "\n";
+    }
+    ui->steps->setText(QString::fromStdString(parrafo));
+    ui->cantidad->setValue(una.getPersonas());
+}

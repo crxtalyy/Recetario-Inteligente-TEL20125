@@ -1,7 +1,9 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
-
 #include <QMainWindow>
+#include <deque>
+#include "recetas.h"
+using namespace std;
 
 QT_BEGIN_NAMESPACE
 namespace Ui{
@@ -23,9 +25,11 @@ private slots:
     void on_nextF3_clicked();
     void on_home_clicked();
     void on_adios_clicked();
+    void on_listaRecetas_currentRowChanged(int currentRow);
 
 private:
     Ui::MainWindow *ui;
     void cargarRecetas();
+    deque<recetas> listaRecetas;
 };
 #endif // MAINWINDOW_H

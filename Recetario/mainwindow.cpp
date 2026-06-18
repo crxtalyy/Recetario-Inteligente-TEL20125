@@ -147,3 +147,7 @@ void MainWindow::on_listaRecetas_currentRowChanged(int currentRow){
     ui->steps->setText(QString::fromStdString(parrafo));
     ui->cantidad->setValue(una.getPersonas());
 }
+void MainWindow::on_backMenu_clicked(){
+    ui->stackedWidget->setCurrentIndex(1);
+    cargarRecetas();
+}

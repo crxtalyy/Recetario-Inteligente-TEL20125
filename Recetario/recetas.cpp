@@ -43,9 +43,3 @@ vector<string> recetas::getPasos() const{
 void recetas::setPasos(vector<string> nuevoPa){
     pasos = nuevoPa;
 }
-
-float recetas::factorEscala(int k){
-    int cuantos = getPersonas();
-    float factor = k/(float)cuantos;
-    return factor;
-}

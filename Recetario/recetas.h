@@ -17,6 +17,7 @@ public:
     void setLista(vector<string> nuevoL);
     vector<string> getPasos() const;
     void setPasos(vector<string> nuevoPa);
+    float factorEscala(int k);
 private:
     string nombre;//variables de la receta
     int personas;

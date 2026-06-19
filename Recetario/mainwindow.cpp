@@ -75,23 +75,23 @@ int contador = 1;
 void MainWindow::on_nextF3_clicked(){
     if(contador<ingredientes){
         string ingre = ui->queEs->text().toStdString();
-        string cant = ui->cuantoEs->text().toStdString();
-        string medida = ui->unidad->text().toStdString();
+        string cant = to_string(ui->cuantoEs->value());
+        string medida = ui->unidad->currentText().toStdString();
         crearIngredientes(name, ingre, cant, medida);
         ui->queEs->clear();
-        ui->cuantoEs->clear();
-        ui->unidad->clear();
+        ui->cuantoEs->setValue(0.0);
+        ui->unidad->setCurrentIndex(0);
         ui->textoInteractivo->setText("Tienes " + QString::number(contador) + " ingredientes de " + QString::number(ingredientes));
         contador += 1;
     }
     else{
         string ingre = ui->queEs->text().toStdString();
-        string cant = ui->cuantoEs->text().toStdString();
-        string medida = ui->unidad->text().toStdString();
+        string cant = to_string(ui->cuantoEs->value());
+        string medida = ui->unidad->currentText().toStdString();
         crearIngredientes(name, ingre, cant, medida);
         ui->queEs->clear();
-        ui->cuantoEs->clear();
-        ui->unidad->clear();
+        ui->cuantoEs->setValue(0.0);
+        ui->unidad->setCurrentIndex(0);
         contador = 1;
         ui->stackedWidget->setCurrentIndex(4);
     }

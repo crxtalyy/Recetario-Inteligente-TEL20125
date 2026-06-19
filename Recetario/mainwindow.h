@@ -32,5 +32,6 @@ private:
     Ui::MainWindow *ui;
     void cargarRecetas();
     deque<recetas> listaRecetas;
+    recetas actual;
 };
 #endif // MAINWINDOW_H

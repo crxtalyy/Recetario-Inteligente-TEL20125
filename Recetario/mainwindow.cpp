@@ -32,7 +32,7 @@ void MainWindow::on_PassBox_textChanged(const QString &arg1){
 void MainWindow::activarF1(){
     bool nom = !(ui->nameReceta->text().isEmpty());
     bool per = (ui->cantPersonas->value() > 0.0);
-    bool ing = (ui->cantIngredientes->value() != 0);
+    bool ing = (ui->cantIngredientes->value() > 0.0);
     ui->nextF2->setEnabled(nom && per && ing);
 }
 void MainWindow::on_nameReceta_textChanged(const QString &arg1){

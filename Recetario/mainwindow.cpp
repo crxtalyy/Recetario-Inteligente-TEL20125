@@ -11,6 +11,7 @@ MainWindow::MainWindow(QWidget *parent): QMainWindow(parent), ui(new Ui::MainWin
     ui->setupUi(this);
     ui->BotonEnter->setEnabled(false);
     ui->nextF2->setEnabled(false);
+    ui->nextF3->setEnabled(false);
 }
 
 MainWindow::~MainWindow(){
@@ -43,6 +44,22 @@ void MainWindow::on_cantPersonas_valueChanged(int arg1){
 }
 void MainWindow::on_cantIngredientes_valueChanged(int arg1){
     activarF1();
+}
+
+void MainWindow::activarF2(){
+    bool nom = !(ui->queEs->text().isEmpty());
+    bool what = (ui->cuantoEs->value() > 0.0);
+    bool uni = (ui->unidad->currentIndex() != 0);
+    ui->nextF3->setEnabled(nom && what && uni);
+}
+void MainWindow::on_queEs_textChanged(const QString &arg1){
+    activarF2();
+}
+void MainWindow::on_cuantoEs_valueChanged(double arg1){
+    activarF2();
+}
+void MainWindow::on_unidad_currentIndexChanged(int index){
+    activarF2();
 }
 
 string name;//para guardar nombre

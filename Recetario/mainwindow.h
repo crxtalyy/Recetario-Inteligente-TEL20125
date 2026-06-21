@@ -24,6 +24,9 @@ private slots:
     void on_nameReceta_textChanged(const QString &arg1);
     void on_cantPersonas_valueChanged(int arg1);
     void on_cantIngredientes_valueChanged(int arg1);
+    void on_queEs_textChanged(const QString &arg1);
+    void on_cuantoEs_valueChanged(double arg1);
+    void on_unidad_currentIndexChanged(int index);
 
     void on_BotonEnter_clicked();
     void on_crearReceta_clicked();
@@ -42,5 +45,6 @@ private:
     recetas actual;
     void activarLogin();
     void activarF1();
+    void activarF2();
 };
 #endif // MAINWINDOW_H

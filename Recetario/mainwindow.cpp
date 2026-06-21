@@ -9,11 +9,25 @@ using namespace std;
 
 MainWindow::MainWindow(QWidget *parent): QMainWindow(parent), ui(new Ui::MainWindow){
     ui->setupUi(this);
+    ui->BotonEnter->serEnabled(false);
 }
 
 MainWindow::~MainWindow(){
     delete ui;
 }
+
+void MainWindow::activarLogin(){
+    bool us = !(ui->UserBox->text().isEmpty());
+    bool pass = !(ui->PassBox->text().isEmpty());
+    ui->BotonEnter->setEnabled(us && pass);
+}
+void MainWindow::on_UserBox_textChanged(const QString &arg1){
+    activarLogin();
+}
+void MainWindow::on_PassBox_textChanged(const QString &arg1){
+    activarLogin();
+}
+
 string name;//para guardar nombre
 void MainWindow::on_BotonEnter_clicked(){
     string user = ui->UserBox->text().toStdString(); //extraemos campo nombre
@@ -152,7 +166,6 @@ void MainWindow::on_backMenu_clicked(){
     ui->stackedWidget->setCurrentIndex(1);
     cargarRecetas();
 }
-
 
 void MainWindow::on_escalar_clicked(){
     int nueva = ui->cantidad->value();

@@ -28,11 +28,14 @@ private slots:
     void on_listaRecetas_currentRowChanged(int currentRow);
     void on_backMenu_clicked();
     void on_escalar_clicked();
+    void on_UserBox_textChanged(const QString &arg1);
+    void on_PassBox_textChanged(const QString &arg1);
 
 private:
     Ui::MainWindow *ui;
     void cargarRecetas();
     deque<recetas> listaRecetas;
     recetas actual;
+    void activarLogin();
 };
 #endif // MAINWINDOW_H

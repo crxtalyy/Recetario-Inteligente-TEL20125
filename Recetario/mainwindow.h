@@ -19,6 +19,12 @@ public:
     ~MainWindow() override;
     
 private slots:
+    void on_UserBox_textChanged(const QString &arg1);
+    void on_PassBox_textChanged(const QString &arg1);
+    void on_nameReceta_textChanged(const QString &arg1);
+    void on_cantPersonas_valueChanged(int arg1);
+    void on_cantIngredientes_valueChanged(int arg1);
+
     void on_BotonEnter_clicked();
     void on_crearReceta_clicked();
     void on_nextF2_clicked();
@@ -28,8 +34,6 @@ private slots:
     void on_listaRecetas_currentRowChanged(int currentRow);
     void on_backMenu_clicked();
     void on_escalar_clicked();
-    void on_UserBox_textChanged(const QString &arg1);
-    void on_PassBox_textChanged(const QString &arg1);
 
 private:
     Ui::MainWindow *ui;
@@ -37,5 +41,6 @@ private:
     deque<recetas> listaRecetas;
     recetas actual;
     void activarLogin();
+    void activarF1();
 };
 #endif // MAINWINDOW_H

@@ -9,7 +9,8 @@ using namespace std;
 
 MainWindow::MainWindow(QWidget *parent): QMainWindow(parent), ui(new Ui::MainWindow){
     ui->setupUi(this);
-    ui->BotonEnter->serEnabled(false);
+    ui->BotonEnter->setEnabled(false);
+    ui->nextF2->setEnabled(false);
 }
 
 MainWindow::~MainWindow(){
@@ -26,6 +27,22 @@ void MainWindow::on_UserBox_textChanged(const QString &arg1){
 }
 void MainWindow::on_PassBox_textChanged(const QString &arg1){
     activarLogin();
+}
+
+void MainWindow::activarF1(){
+    bool nom = !(ui->nameReceta->text().isEmpty());
+    bool per = (ui->cantPersonas->value() > 0.0);
+    bool ing = (ui->cantIngredientes->value() != 0);
+    ui->nextF2->setEnabled(nom && per && ing);
+}
+void MainWindow::on_nameReceta_textChanged(const QString &arg1){
+    activarF1();
+}
+void MainWindow::on_cantPersonas_valueChanged(int arg1){
+    activarF1();
+}
+void MainWindow::on_cantIngredientes_valueChanged(int arg1){
+    activarF1();
 }
 
 string name;//para guardar nombre

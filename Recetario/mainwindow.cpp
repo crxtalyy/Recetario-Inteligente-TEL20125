@@ -126,11 +126,11 @@ void MainWindow::on_listaRecetas_currentRowChanged(int currentRow){
     if (currentRow < 0 || currentRow >= listaRecetas.size()){
         return;
     }
-    recetas una = listaRecetas[currentRow];
+    actual = listaRecetas[currentRow];
     ui->stackedWidget->setCurrentIndex(5);
-    ui->title->setText(QString::fromStdString(una.getNombre()));
+    ui->title->setText(QString::fromStdString(actual.getNombre()));
     string parrafo = "";
-    vector<string> linea = una.getLista();
+    vector<string> linea = actual.getLista();
     for(int i = 0; i < linea.size(); i++){
         parrafo += to_string(i+1);
         parrafo += ". ";
@@ -139,15 +139,45 @@ void MainWindow::on_listaRecetas_currentRowChanged(int currentRow){
     }
     ui->ingre->setText(QString::fromStdString(parrafo));
     parrafo = "";
-    vector<string> line = una.getPasos();
+    vector<string> line = actual.getPasos();
     for(int i = 0; i < line.size(); i++){
         parrafo += line[i];
         parrafo += "\n";
     }
     ui->steps->setText(QString::fromStdString(parrafo));
-    ui->cantidad->setValue(una.getPersonas());
+    ui->cantidad->setValue(actual.getPersonas());
 }
+
 void MainWindow::on_backMenu_clicked(){
     ui->stackedWidget->setCurrentIndex(1);
     cargarRecetas();
+}
+
+
+void MainWindow::on_escalar_clicked(){
+    int nueva = ui->cantidad->value();
+    int cuantos = actual.getPersonas();
+    float factor = nueva/(float)cuantos;
+    ui->title->setText(QString::fromStdString(actual.getNombre()));
+    string parrafo = "";
+    vector<string> linea = actual.getLista();
+    for(int i = 0; i < linea.size(); i++){
+        parrafo += to_string(i+1);
+        parrafo += ". ";
+        string instruccion = linea[i];
+        int espacio = instruccion.find(" ");
+        float corte = stof(instruccion.substr(0, espacio));
+        string resto = instruccion.substr(espacio);
+        parrafo += QString::number(corte*factor).toStdString() + resto;
+        parrafo += "\n";
+    }
+    ui->ingre->setText(QString::fromStdString(parrafo));
+    parrafo = "";
+    vector<string> line = actual.getPasos();
+    for(int i = 0; i < line.size(); i++){
+        parrafo += line[i];
+        parrafo += "\n";
+    }
+    ui->steps->setText(QString::fromStdString(parrafo));
+    ui->cantidad->setValue(nueva);
 }

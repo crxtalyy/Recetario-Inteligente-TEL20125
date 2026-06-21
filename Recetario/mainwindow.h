@@ -27,6 +27,7 @@ private slots:
     void on_adios_clicked();
     void on_listaRecetas_currentRowChanged(int currentRow);
     void on_backMenu_clicked();
+    void on_escalar_clicked();
 
 private:
     Ui::MainWindow *ui;

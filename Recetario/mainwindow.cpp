@@ -132,7 +132,7 @@ int contador = 1;
 void MainWindow::on_nextF3_clicked(){
     if(contador<ingredientes){
         string ingre = ui->queEs->text().toStdString();
-        string cant = to_string(ui->cuantoEs->value());
+        string cant = QString::number(ui->cuantoEs->value()).toStdString();
         string medida = ui->unidad->currentText().toStdString();
         crearIngredientes(name, ingre, cant, medida);
         ui->queEs->clear();
@@ -143,7 +143,7 @@ void MainWindow::on_nextF3_clicked(){
     }
     else{
         string ingre = ui->queEs->text().toStdString();
-        string cant = to_string(ui->cuantoEs->value());
+        string cant = QString::number(ui->cuantoEs->value()).toStdString();
         string medida = ui->unidad->currentText().toStdString();
         crearIngredientes(name, ingre, cant, medida);
         ui->queEs->clear();

@@ -64,8 +64,8 @@ void MainWindow::on_unidad_currentIndexChanged(int index){
 }
 
 void MainWindow::activarF3(){
-    bool tex = !(ui->sts->toPlainText().isEmpty());
-    ui->sts->setEnabled(tex);
+    bool tex = !(ui->sts->toPlainText().trimmed().isEmpty());
+    ui->home->setEnabled(tex);
 }
 void MainWindow::on_sts_textChanged(){
     activarF3();
@@ -157,8 +157,8 @@ void MainWindow::on_nextF3_clicked(){
 void MainWindow::on_home_clicked(){
     string instrucciones = ui->sts->toPlainText().toStdString();
     crearPreparacion(name, instrucciones);
-    cargarRecetas();
     ui->stackedWidget->setCurrentIndex(1);
+    cargarRecetas();
     ui->sts->clear();
 }
 

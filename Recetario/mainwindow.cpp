@@ -12,6 +12,7 @@ MainWindow::MainWindow(QWidget *parent): QMainWindow(parent), ui(new Ui::MainWin
     ui->BotonEnter->setEnabled(false);
     ui->nextF2->setEnabled(false);
     ui->nextF3->setEnabled(false);
+    ui->home->setEnabled(false);
 }
 
 MainWindow::~MainWindow(){
@@ -60,6 +61,14 @@ void MainWindow::on_cuantoEs_valueChanged(double arg1){
 }
 void MainWindow::on_unidad_currentIndexChanged(int index){
     activarF2();
+}
+
+void MainWindow::activarF3(){
+    bool tex = !(ui->sts->toPlainText().isEmpty());
+    ui->sts->setEnabled(tex);
+}
+void MainWindow::on_sts_textChanged(){
+    activarF3();
 }
 
 string name;//para guardar nombre

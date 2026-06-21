@@ -27,6 +27,7 @@ private slots:
     void on_queEs_textChanged(const QString &arg1);
     void on_cuantoEs_valueChanged(double arg1);
     void on_unidad_currentIndexChanged(int index);
+    void on_sts_textChanged();
 
     void on_BotonEnter_clicked();
     void on_crearReceta_clicked();
@@ -46,5 +47,6 @@ private:
     void activarLogin();
     void activarF1();
     void activarF2();
+    void activarF3();
 };
 #endif // MAINWINDOW_H

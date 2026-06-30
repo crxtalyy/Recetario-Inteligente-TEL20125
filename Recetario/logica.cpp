@@ -63,10 +63,10 @@ void crearBase(string nombre, int p, int i, string usuario){
     }
 }
 
-void crearIngredientes(string usuario, string ingrediente, string cantidad, string unidad){
+void crearIngredientes(string usuario, string ingrediente, string cantidad, string unidad, string nutri){
     ofstream archivo("recetas_usuarios/recetas_" + usuario + ".txt", std::ios::app);
     if(archivo.is_open()){
-        archivo << cantidad + " " + unidad + " de " + ingrediente << endl;//lista
+        archivo << cantidad + " " + unidad + " de " + ingrediente + "(" + nutri+ ")" << endl;//lista
         archivo.close();
     }
 }

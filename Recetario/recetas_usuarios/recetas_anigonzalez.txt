@@ -1,0 +1,97 @@
+//
+Arroz
+4
+6
+Ingredientes: 
+1 taza de Arroz (Carbohidratos)
+0.5 unidad de Zanahoria (Vitaminas)
+0.5 unidad de Pimentón (Vitaminas)
+1 diente de Ajo (Vitaminas)
+1 caluga de Caldo magi (Grasas)
+1.5 tazas de Agua hervida (Aguas)
+Preparación: 
+1. Picar el ajo, la zanahoria y el pimentón
+2. Sofreír en una olla con un chorrito de aceite
+3. Añadir el arroz al sofrito con el caldo magi y 1 cda de sal
+4. Agregar el agua hervida
+5. Cocinar a fuego lento con tostador por 20 minutos
+6. Servir
+FIN
+//
+Pino (carne molida)
+4
+7
+Ingredientes: 
+2 unidades de Cebolla (Vitaminas)
+0.5 unidad de Pimentón (Vitaminas)
+1 diente de Ajo (Vitaminas)
+3 cdtas de Sal (Minerales)
+1 cda de Aliño completo (Minerales)
+1 cda de Orégano (Minerales)
+0.5 kg de Carne molida (Proteínas)
+Preparación: 
+1. Picar la cebolla, el ajo y el pimentón
+2. En una olla sofreír lo anterior a llama alta hasta dorar
+3. Agregar los 3 aliños y mezclar
+4. Añadir la carne molida y revolver hasta que este cocida
+5 ¡Listo!
+FIN
+//
+Fideos
+4
+4
+Ingredientes: 
+320 g de Fideos (Carbohidratos)
+1 olla de Agua hervida (Aguas)
+3 cdtas de Sal (Minerales)
+3 cdtas de Aceite (Grasas)
+Preparación: 
+1. Echar el agua en la olla
+2. Verter la sal y el aceite
+3. Agregar los fideos y cocinar por el tiempo indicado
+4. Servir
+FIN
+//
+Huevo frito
+1
+2
+Ingredientes: 
+2 unidades de Huevos (Proteínas)
+100 ml de Aceite (Grasas)
+Preparación: 
+1. Calentar el aceite en un sartén
+2. Romper el huevo y echar al sartén
+3. Cocinar y servir
+FIN
+//
+Completo Italiano
+4
+5
+Ingredientes: 
+4 unidades de Pan (Carbohidratos)
+4 unidades de Salchicha (Proteínas)
+2 unidades de Palta (Grasas)
+2 unidades de Tomate (Vitaminas)
+1 unidades de Mayonesa (Grasas)
+Preparación: 
+1. Cocinar en un sartén las salchichas en aceite
+2. Picar el tomate y moler la palta
+3. Calentar el pan y hacer un corte para meter la salchicha
+4. Agregar el tomate y luego la palta
+5. Poner mayonesa a gusto
+6. Servir
+FIN
+//
+Pan con jamon y mayo
+1
+3
+Ingredientes: 
+1 unidades de Pan (Carbohidratos)
+2 unidades de Jamon (Proteínas)
+1 unidades de Mayo (Grasas)
+Preparación: 
+1. Calentar el pan
+2. Untar la mayonesa
+3. Poner el jamon
+4. Servir
+FIN

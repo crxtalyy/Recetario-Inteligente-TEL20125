@@ -3,6 +3,7 @@
 #include <QMainWindow>
 #include <deque>
 #include "recetas.h"
+#include <QtCharts/QChartView>
 using namespace std;
 
 QT_BEGIN_NAMESPACE
@@ -17,6 +18,7 @@ class MainWindow : public QMainWindow{
 public:
     explicit MainWindow(QWidget *parent = nullptr);
     ~MainWindow() override;
+    QChart *doPieChart();
     
 private slots:
     void on_UserBox_textChanged(const QString &arg1);
@@ -27,7 +29,10 @@ private slots:
     void on_queEs_textChanged(const QString &arg1);
     void on_cuantoEs_valueChanged(double arg1);
     void on_unidad_currentIndexChanged(int index);
+    void on_nutriente_currentIndexChanged(int index);
     void on_sts_textChanged();
+    void on_usuarioBox_textChanged(const QString &arg1);
+    void on_contraBox_textChanged(const QString &arg1);
 
     void on_BotonEnter_clicked();
     void on_crearReceta_clicked();
@@ -38,6 +43,12 @@ private slots:
     void on_listaRecetas_currentRowChanged(int currentRow);
     void on_backMenu_clicked();
     void on_escalar_clicked();
+    void on_menu_clicked();
+    void on_ingreso_clicked();
+    void on_nueva_clicked();
+    void on_newaccount_clicked();
+    void on_genGrafico_clicked();
+    void on_borrar_clicked();
 
 private:
     Ui::MainWindow *ui;
@@ -48,5 +59,6 @@ private:
     void activarF1();
     void activarF2();
     void activarF3();
+    void activarSignin();
 };
 #endif // MAINWINDOW_H

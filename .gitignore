@@ -1,0 +1,17 @@
+# Archivos de compilación y temporales
+build-*/
+*.pro.user
+.qtc_clangd/
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+Makefile
+Makefile.Debug
+Makefile.Release
+
+# Ejecutables
+*.exe
+
+# Archivos temporales de sistema
+.DS_Store
+Thumbs.db

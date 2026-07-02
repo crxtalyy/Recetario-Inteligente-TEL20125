@@ -26,7 +26,7 @@ Para instrucciones detalladas sobre cómo compilar y ejecutar el proyecto, por f
 3. Configura el Kit de compilación y presiona el botón **Build**.
 
 ## Documentación
-* [Documento de Análisis y Diseño](docs/Analisis_y_Diseno.pdf)
+* [Documento de Análisis y Diseño](docs/Documento_de_análisis-1.pdf)
 * [Manual de Usuario](docs/Manual_Usuario.pdf)
 
 ## Integrantes
